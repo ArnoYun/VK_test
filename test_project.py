@@ -16,7 +16,9 @@ def test_position():
     except: IndexError
 
 
-
+@pytest.mark.parametrize("test_input,expected", [("sample", 1), ("100", 0), ("99", 2)])
+def test_count(test_input, expected):
+    assert  tuple_sample.count(test_input) == expected
 
 
 
